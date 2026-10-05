@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "cliente": "Cafe Luna",
+    "cotizacion": {
+      "tipo": "neon_led",
+      "ancho": 1.2,
+      "alto": 0.6,
+      "area_facturable": 0.72,
+      "rgb": true,
+      "instalacion": true,
+      "subtotal_letrero": 2016.0,
+      "recargo_rgb": 302.4,
+      "costo_instalacion": 900.0,
+      "subtotal": 3218.4,
+      "iva": 514.94,
+      "total": 3733.34
+    },
+    "descuento_pct": 0.0,
+    "descuento": 0.0,
+    "iva": 514.94,
+    "total": 3733.34,
+    "estado": "entregado",
+    "fecha": "2026-10-04T08:51:58"
+  },
+  {
+    "id": 2,
+    "cliente": "Taller Ruiz",
+    "cotizacion": {
+      "tipo": "caja_luz",
+      "ancho": 4.0,
+      "alto": 2.0,
+      "area_facturable": 8.0,
+      "rgb": false,
+      "instalacion": true,
+      "subtotal_letrero": 18400.0,
+      "recargo_rgb": 0.0,
+      "costo_instalacion": 900.0,
+      "subtotal": 19300.0,
+      "iva": 3088.0,
+      "total": 22388.0
+    },
+    "descuento_pct": 0.05,
+    "descuento": 965.0,
+    "iva": 2933.6,
+    "total": 21268.6,
+    "estado": "nuevo",
+    "fecha": "2026-10-04T08:51:58"
+  },
+  {
+    "id": 3,
+    "cliente": "Plaza Centro",
+    "cotizacion": {
+      "tipo": "caja_luz",
+      "ancho": 5.0,
+      "alto": 3.0,
+      "area_facturable": 15.0,
+      "rgb": true,
+      "instalacion": true,
+      "subtotal_letrero": 34500.0,
+      "recargo_rgb": 5175.0,
+      "costo_instalacion": 900.0,
+      "subtotal": 40575.0,
+      "iva": 6492.0,
+      "total": 47067.0
+    },
+    "descuento_pct": 0.1,
+    "descuento": 4057.5,
+    "iva": 5842.8,
+    "total": 42360.3,
+    "estado": "nuevo",
+    "fecha": "2026-10-04T08:51:58"
+  }
+]

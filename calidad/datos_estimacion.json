@@ -1,0 +1,42 @@
+{
+  "juicio_expertos": {
+    "expertos": ["Docente asesor", "Companero con experiencia DevOps", "Autor del proyecto"],
+    "estimaciones_horas": {
+      "catalogo": [4, 5, 4],
+      "cotizador": [8, 10, 9],
+      "repositorio": [3, 4, 4],
+      "ventas": [9, 10, 8],
+      "soporte_ia": [16, 20, 15],
+      "devops_ci_reporte": [10, 12, 12]
+    }
+  },
+  "analoga": {
+    "proyecto_anterior": "Sistema de cotizacion web para taller de impresion (proyecto del semestre pasado)",
+    "horas_reales": 62,
+    "sloc": 300,
+    "factor_ajuste": 1.15,
+    "justificacion": "Se suma 15% por la integracion con IA y el pipeline DevOps, que el proyecto anterior no tenia."
+  },
+  "puntos_funcion": {
+    "componentes": [
+      {"nombre": "Registrar cotizacion", "tipo": "EI", "complejidad": "media"},
+      {"nombre": "Registrar pedido", "tipo": "EI", "complejidad": "media"},
+      {"nombre": "Cambiar estado de pedido", "tipo": "EI", "complejidad": "baja"},
+      {"nombre": "Crear ticket de soporte", "tipo": "EI", "complejidad": "media"},
+      {"nombre": "Resolver ticket", "tipo": "EI", "complejidad": "baja"},
+      {"nombre": "Mensaje al asistente IA", "tipo": "EI", "complejidad": "alta"},
+      {"nombre": "Cotizacion detallada", "tipo": "EO", "complejidad": "media"},
+      {"nombre": "Listado de pedidos", "tipo": "EO", "complejidad": "media"},
+      {"nombre": "Respuesta del asistente IA", "tipo": "EO", "complejidad": "alta"},
+      {"nombre": "Consultar catalogo", "tipo": "EQ", "complejidad": "baja"},
+      {"nombre": "Consultar pedidos por estado", "tipo": "EQ", "complejidad": "baja"},
+      {"nombre": "Consultar tickets abiertos", "tipo": "EQ", "complejidad": "baja"},
+      {"nombre": "Archivo de pedidos", "tipo": "ILF", "complejidad": "baja"},
+      {"nombre": "Archivo de tickets", "tipo": "ILF", "complejidad": "baja"},
+      {"nombre": "Catalogo de letreros", "tipo": "ILF", "complejidad": "baja"},
+      {"nombre": "Servicio externo de IA (Claude)", "tipo": "EIF", "complejidad": "baja"}
+    ],
+    "gsc": [2, 1, 1, 2, 3, 3, 2, 2, 1, 2, 2, 3, 2, 3],
+    "horas_por_pf": 0.8
+  }
+}

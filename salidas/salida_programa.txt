@@ -1,0 +1,31 @@
+=== 1. CATALOGO ===
+neon_led  Neón LED flexible                $  2,800/m2
+acrilico  Letras de acrílico con luz       $  1,900/m2
+caja_luz  Caja de luz (anuncio luminoso)   $  2,300/m2
+
+=== 2. COTIZACIONES Y PEDIDOS ===
+Pedido #1 Cafe Luna: neon_led 1.2x0.6 m | subtotal $3,218.40 | desc 0% | total $3,733.34
+Pedido #2 Taller Ruiz: caja_luz 4.0x2.0 m | subtotal $19,300.00 | desc 5% | total $21,268.60
+Pedido #3 Plaza Centro: caja_luz 5.0x3.0 m | subtotal $40,575.00 | desc 10% | total $42,360.30
+Pedido #1 -> entregado
+Total vendido: $67,362.24
+
+=== 3. SOPORTE IA (modo: local (reglas)) ===
+Cliente : Quiero un letrero neon de 1.2 x 0.6 m para mi cafeteria
+IA      : [cotizar] Cotizacion Neón LED flexible 1.2 x 0.6 m: subtotal $2,016.00, IVA $322.56, total $2,338.56.
+
+Cliente : Que diferencia hay entre neon y caja de luz?
+IA      : [catalogo] Neón LED flexible: Tubo LED flexible, bajo consumo y colores vivos. Ideal para cafeterías, bares y decoración. ($2,800/m2)
+Caja de luz (anuncio luminoso): Estructura con lona o acrílico iluminada por dentro. Muy visible de día y de noche en fachadas. ($2,300/m2)
+
+Cliente : Mi letrero no enciende
+IA      : [falla] Ticket #1 creado (severidad media). Sin encendido. 1) Revise que el enchufe y el contacto tengan corriente. 2) Verifique el transformador (LED indicador). 3) Revise conectores flojos. 4) Si sigue igual, un tecnico agendara visita.
+
+Cliente : Le entro agua al letrero y huele a quemado
+IA      : [falla] Ticket #2 creado (severidad alta). Posible riesgo electrico. 1) Desconecte el letrero de inmediato. 2) No lo toque si esta mojado. 3) Un tecnico lo revisara en 24 horas.
+
+Respuestas donde la IA fallo y se uso el modo local: 0
+
+=== 4. TICKETS (reloj simulado) ===
+Ticket #1 (media) resuelto en 45.0 min
+Ticket #2 (alta) resuelto en 120.0 min

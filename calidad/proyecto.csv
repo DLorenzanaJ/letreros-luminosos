@@ -1,0 +1,7 @@
+modulo,sprint,horas_estimadas,horas_reales,optimista,mas_probable,pesimista
+catalogo,1,4,5,3,4,7
+cotizador,1,8,9,6,8,12
+repositorio,2,4,4,3,4,6
+ventas,2,8,10,6,8,13
+soporte_ia,3,14,18,10,14,24
+devops_ci_reporte,3,10,14,8,10,16

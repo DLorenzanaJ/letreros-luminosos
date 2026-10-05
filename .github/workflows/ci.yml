@@ -1,0 +1,33 @@
+name: CI - Calidad de software
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  calidad:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Instalar dependencias
+        run: pip install -r requirements.txt
+      - name: Pruebas con cobertura minima de 80 por ciento
+        run: python -m pytest --cov=app --cov-fail-under=80 -v
+      - name: Programa, metricas y reporte
+        run: python run_all.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      - name: Guardar artefactos
+        uses: actions/upload-artifact@v4
+        with:
+          name: reporte-y-metricas
+          path: |
+            Reporte_Letreros_Luminosos.docx
+            salidas/metrics.json
+            salidas/salida_programa.txt
+            salidas/salida_pruebas.txt

@@ -1,0 +1,10 @@
+{
+  "institucion": "[Nombre de tu universidad]",
+  "materia": "[Nombre de la materia]",
+  "alumno": "[Tu nombre completo]",
+  "matricula": "[Tu matrícula]",
+  "profesor": "[Nombre del profesor]",
+  "grupo": "[Grupo]",
+  "fecha": "Octubre de 2026",
+  "repositorio": "https://github.com/[tu-usuario]/letreros-luminosos"
+}

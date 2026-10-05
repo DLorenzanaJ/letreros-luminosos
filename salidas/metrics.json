@@ -1,0 +1,935 @@
+{
+  "generado": "2026-10-04T08:51:59",
+  "sistema": "Linux-6.18.44-fc-v64-x86_64-with-glibc2.39",
+  "python": "3.12.3",
+  "modo_ia": "local (reglas)",
+  "producto": {
+    "modulos": {
+      "catalogo": {
+        "sloc": 36,
+        "funciones": 3,
+        "cc_promedio": 1.67,
+        "cc_maxima": 2,
+        "rango_max": "A",
+        "indice_mantenibilidad": 67.0
+      },
+      "cotizador": {
+        "sloc": 45,
+        "funciones": 4,
+        "cc_promedio": 2.25,
+        "cc_maxima": 3,
+        "rango_max": "A",
+        "indice_mantenibilidad": 47.4
+      },
+      "repositorio": {
+        "sloc": 36,
+        "funciones": 8,
+        "cc_promedio": 1.75,
+        "cc_maxima": 3,
+        "rango_max": "A",
+        "indice_mantenibilidad": 69.6
+      },
+      "soporte_ia": {
+        "sloc": 193,
+        "funciones": 27,
+        "cc_promedio": 3.26,
+        "cc_maxima": 9,
+        "rango_max": "B",
+        "indice_mantenibilidad": 33.5
+      },
+      "ventas": {
+        "sloc": 48,
+        "funciones": 7,
+        "cc_promedio": 3.14,
+        "cc_maxima": 5,
+        "rango_max": "A",
+        "indice_mantenibilidad": 47.4
+      }
+    },
+    "sloc": 358,
+    "kloc": 0.358,
+    "funciones_total": 49,
+    "cc_promedio": 2.82,
+    "cc_maxima": 9,
+    "top_funciones": [
+      {
+        "modulo": "soporte_ia",
+        "funcion": "clasificar",
+        "cc": 9,
+        "rango": "B"
+      },
+      {
+        "modulo": "soporte_ia",
+        "funcion": "_cotizar",
+        "cc": 6,
+        "rango": "B"
+      },
+      {
+        "modulo": "soporte_ia",
+        "funcion": "crear_proveedor",
+        "cc": 5,
+        "rango": "A"
+      },
+      {
+        "modulo": "soporte_ia",
+        "funcion": "AsistenteSoporte",
+        "cc": 5,
+        "rango": "A"
+      },
+      {
+        "modulo": "soporte_ia",
+        "funcion": "resolver_ticket",
+        "cc": 5,
+        "rango": "A"
+      },
+      {
+        "modulo": "ventas",
+        "funcion": "cambiar_estado",
+        "cc": 5,
+        "rango": "A"
+      },
+      {
+        "modulo": "soporte_ia",
+        "funcion": "ProveedorClaude",
+        "cc": 4,
+        "rango": "A"
+      },
+      {
+        "modulo": "soporte_ia",
+        "funcion": "ProveedorGemini",
+        "cc": 4,
+        "rango": "A"
+      }
+    ],
+    "mi_promedio": 53.0
+  },
+  "pruebas": {
+    "total": 32,
+    "aprobadas": 32,
+    "fallidas": 0,
+    "tiempo_s": 0.22,
+    "tasa_exito": 100.0
+  },
+  "cobertura": {
+    "total": 94.2,
+    "por_archivo": {
+      "__init__": {
+        "cobertura": 100.0,
+        "sentencias": 0,
+        "no_cubiertas": 0
+      },
+      "catalogo": {
+        "cobertura": 100.0,
+        "sentencias": 16,
+        "no_cubiertas": 0
+      },
+      "cotizador": {
+        "cobertura": 100.0,
+        "sentencias": 38,
+        "no_cubiertas": 0
+      },
+      "repositorio": {
+        "cobertura": 100.0,
+        "sentencias": 36,
+        "no_cubiertas": 0
+      },
+      "soporte_ia": {
+        "cobertura": 89.6,
+        "sentencias": 154,
+        "no_cubiertas": 16
+      },
+      "ventas": {
+        "cobertura": 100.0,
+        "sentencias": 33,
+        "no_cubiertas": 0
+      }
+    }
+  },
+  "requisitos": {
+    "detalle": [
+      {
+        "id": "RF-01",
+        "requisito": "Consultar el catálogo de letreros luminosos",
+        "tipo": "funcional",
+        "pruebas": 3,
+        "cumple": true
+      },
+      {
+        "id": "RF-02",
+        "requisito": "Cotizar un letrero según tipo, medidas, RGB e instalación",
+        "tipo": "funcional",
+        "pruebas": 3,
+        "cumple": true
+      },
+      {
+        "id": "RF-03",
+        "requisito": "Validar que las medidas sean numéricas y estén en rango",
+        "tipo": "funcional",
+        "pruebas": 2,
+        "cumple": true
+      },
+      {
+        "id": "RF-04",
+        "requisito": "Calcular el IVA (16%) y el total de la cotización",
+        "tipo": "funcional",
+        "pruebas": 1,
+        "cumple": true
+      },
+      {
+        "id": "RF-05",
+        "requisito": "Registrar pedidos con descuento por volumen",
+        "tipo": "funcional",
+        "pruebas": 4,
+        "cumple": true
+      },
+      {
+        "id": "RF-06",
+        "requisito": "Controlar el estado del pedido (flujo válido)",
+        "tipo": "funcional",
+        "pruebas": 3,
+        "cumple": true
+      },
+      {
+        "id": "RF-07",
+        "requisito": "El asistente IA cotiza a partir de texto libre",
+        "tipo": "funcional",
+        "pruebas": 2,
+        "cumple": true
+      },
+      {
+        "id": "RF-08",
+        "requisito": "El asistente IA diagnostica fallas y crea tickets",
+        "tipo": "funcional",
+        "pruebas": 4,
+        "cumple": true
+      },
+      {
+        "id": "RF-09",
+        "requisito": "Registrar el tiempo de resolución de cada ticket",
+        "tipo": "funcional",
+        "pruebas": 2,
+        "cumple": true
+      },
+      {
+        "id": "RNF-01",
+        "requisito": "Fiabilidad: tolerar la falla del proveedor de IA",
+        "tipo": "fiabilidad",
+        "pruebas": 5,
+        "cumple": true
+      },
+      {
+        "id": "RNF-02",
+        "requisito": "Recuperabilidad: recuperarse de archivos de datos dañados",
+        "tipo": "fiabilidad",
+        "pruebas": 3,
+        "cumple": true
+      }
+    ],
+    "cumplidos": 11,
+    "total": 11,
+    "porcentaje": 100.0
+  },
+  "defectos": {
+    "total": 10,
+    "por_fase": {
+      "revision": 4,
+      "pruebas": 5,
+      "produccion": 1
+    },
+    "por_severidad": {
+      "critica": 4,
+      "alta": 2,
+      "media": 3,
+      "baja": 1
+    },
+    "por_origen": {
+      "IA": 3,
+      "humano": 7
+    },
+    "densidad_kloc": 27.9,
+    "por_modulo": {
+      "catalogo": {
+        "defectos": 1,
+        "densidad": 27.8
+      },
+      "cotizador": {
+        "defectos": 2,
+        "densidad": 44.4
+      },
+      "repositorio": {
+        "defectos": 1,
+        "densidad": 27.8
+      },
+      "soporte_ia": {
+        "defectos": 4,
+        "densidad": 20.7
+      },
+      "ventas": {
+        "defectos": 2,
+        "densidad": 41.7
+      }
+    },
+    "mttd_horas": 21.65,
+    "mttr_horas": 2.54,
+    "criticos_pruebas": 3,
+    "criticos_produccion": 1,
+    "eficacia_pruebas": 75.0,
+    "eficacia_revision": 40.0,
+    "bitacora": [
+      {
+        "id": "D-01",
+        "modulo": "cotizador",
+        "severidad": "alta",
+        "fase_deteccion": "revision",
+        "origen": "IA",
+        "descripcion": "Medida negativa no se validaba",
+        "mttd": 2.5,
+        "mttr": 0.5
+      },
+      {
+        "id": "D-02",
+        "modulo": "cotizador",
+        "severidad": "media",
+        "fase_deteccion": "pruebas",
+        "origen": "humano",
+        "descripcion": "Area minima facturable no se aplicaba",
+        "mttd": 25.0,
+        "mttr": 0.7
+      },
+      {
+        "id": "D-03",
+        "modulo": "ventas",
+        "severidad": "critica",
+        "fase_deteccion": "pruebas",
+        "origen": "humano",
+        "descripcion": "Pedido cancelado seguia sumando al total vendido",
+        "mttd": 17.5,
+        "mttr": 1.5
+      },
+      {
+        "id": "D-04",
+        "modulo": "ventas",
+        "severidad": "media",
+        "fase_deteccion": "revision",
+        "origen": "humano",
+        "descripcion": "Transicion de estado permitia pasar de nuevo a entregado",
+        "mttd": 2.0,
+        "mttr": 0.5
+      },
+      {
+        "id": "D-05",
+        "modulo": "repositorio",
+        "severidad": "critica",
+        "fase_deteccion": "pruebas",
+        "origen": "humano",
+        "descripcion": "Archivo JSON corrupto cerraba el programa",
+        "mttd": 28.0,
+        "mttr": 1.5
+      },
+      {
+        "id": "D-06",
+        "modulo": "catalogo",
+        "severidad": "baja",
+        "fase_deteccion": "revision",
+        "origen": "IA",
+        "descripcion": "Clave de tipo sensible a mayusculas",
+        "mttd": 14.5,
+        "mttr": 0.2
+      },
+      {
+        "id": "D-07",
+        "modulo": "soporte_ia",
+        "severidad": "critica",
+        "fase_deteccion": "pruebas",
+        "origen": "humano",
+        "descripcion": "Falla del proveedor de IA detenia la respuesta",
+        "mttd": 22.0,
+        "mttr": 1.5
+      },
+      {
+        "id": "D-08",
+        "modulo": "soporte_ia",
+        "severidad": "alta",
+        "fase_deteccion": "revision",
+        "origen": "IA",
+        "descripcion": "Medidas con coma decimal no se interpretaban",
+        "mttd": 6.0,
+        "mttr": 1.0
+      },
+      {
+        "id": "D-09",
+        "modulo": "soporte_ia",
+        "severidad": "media",
+        "fase_deteccion": "pruebas",
+        "origen": "humano",
+        "descripcion": "Palabras con acento no se reconocian",
+        "mttd": 47.0,
+        "mttr": 1.0
+      },
+      {
+        "id": "D-10",
+        "modulo": "soporte_ia",
+        "severidad": "critica",
+        "fase_deteccion": "produccion",
+        "origen": "humano",
+        "descripcion": "Riesgo electrico clasificado con severidad media (detectado en demo)",
+        "mttd": 52.0,
+        "mttr": 17.0
+      }
+    ]
+  },
+  "proyecto": {
+    "modulos": [
+      {
+        "modulo": "catalogo",
+        "sprint": 1,
+        "estimadas": 4.0,
+        "reales": 5.0,
+        "desviacion_pct": 25.0,
+        "densidad": 27.8
+      },
+      {
+        "modulo": "cotizador",
+        "sprint": 1,
+        "estimadas": 8.0,
+        "reales": 9.0,
+        "desviacion_pct": 12.5,
+        "densidad": 44.4
+      },
+      {
+        "modulo": "repositorio",
+        "sprint": 2,
+        "estimadas": 4.0,
+        "reales": 4.0,
+        "desviacion_pct": 0.0,
+        "densidad": 27.8
+      },
+      {
+        "modulo": "ventas",
+        "sprint": 2,
+        "estimadas": 8.0,
+        "reales": 10.0,
+        "desviacion_pct": 25.0,
+        "densidad": 41.7
+      },
+      {
+        "modulo": "soporte_ia",
+        "sprint": 3,
+        "estimadas": 14.0,
+        "reales": 18.0,
+        "desviacion_pct": 28.6,
+        "densidad": 20.7
+      },
+      {
+        "modulo": "devops_ci_reporte",
+        "sprint": 3,
+        "estimadas": 10.0,
+        "reales": 14.0,
+        "desviacion_pct": 40.0,
+        "densidad": null
+      }
+    ],
+    "sprints": {
+      "1": {
+        "estimadas": 12.0,
+        "reales": 14.0,
+        "defectos": 3,
+        "desviacion_pct": 16.7
+      },
+      "2": {
+        "estimadas": 12.0,
+        "reales": 14.0,
+        "defectos": 3,
+        "desviacion_pct": 16.7
+      },
+      "3": {
+        "estimadas": 24.0,
+        "reales": 32.0,
+        "defectos": 4,
+        "desviacion_pct": 33.3
+      }
+    },
+    "horas_estimadas": 48.0,
+    "horas_reales": 60.0,
+    "desviacion_pct": 25.0,
+    "eficacia_revision": 40.0
+  },
+  "tickets": {
+    "total": 2,
+    "resueltos": 2,
+    "minutos_promedio": 82.5
+  },
+  "revision_ia": {
+    "modo": "local (reglas estáticas)",
+    "total": 12,
+    "por_regla": {
+      "R01": 12
+    },
+    "hallazgos": [
+      {
+        "archivo": "cotizador.py",
+        "linea": 28,
+        "regla": "R01",
+        "severidad": "baja",
+        "descripcion": "Función 'validar_medida' de 10 líneas sin docstring",
+        "sugerencia_prueba": "Documentar y probar casos límite de validar_medida",
+        "origen": "reglas"
+      },
+      {
+        "archivo": "cotizador.py",
+        "linea": 40,
+        "regla": "R01",
+        "severidad": "baja",
+        "descripcion": "Función 'cotizar' de 16 líneas sin docstring",
+        "sugerencia_prueba": "Documentar y probar casos límite de cotizar",
+        "origen": "reglas"
+      },
+      {
+        "archivo": "repositorio.py",
+        "linea": 15,
+        "regla": "R01",
+        "severidad": "baja",
+        "descripcion": "Función 'cargar' de 11 líneas sin docstring",
+        "sugerencia_prueba": "Documentar y probar casos límite de cargar",
+        "origen": "reglas"
+      },
+      {
+        "archivo": "repositorio.py",
+        "linea": 40,
+        "regla": "R01",
+        "severidad": "baja",
+        "descripcion": "Función 'actualizar' de 8 líneas sin docstring",
+        "sugerencia_prueba": "Documentar y probar casos límite de actualizar",
+        "origen": "reglas"
+      },
+      {
+        "archivo": "soporte_ia.py",
+        "linea": 67,
+        "regla": "R01",
+        "severidad": "baja",
+        "descripcion": "Función 'completar' de 8 líneas sin docstring",
+        "sugerencia_prueba": "Documentar y probar casos límite de completar",
+        "origen": "reglas"
+      },
+      {
+        "archivo": "soporte_ia.py",
+        "linea": 118,
+        "regla": "R01",
+        "severidad": "baja",
+        "descripcion": "Función '_llamar' de 10 líneas sin docstring",
+        "sugerencia_prueba": "Documentar y probar casos límite de _llamar",
+        "origen": "reglas"
+      },
+      {
+        "archivo": "soporte_ia.py",
+        "linea": 150,
+        "regla": "R01",
+        "severidad": "baja",
+        "descripcion": "Función 'clasificar' de 11 líneas sin docstring",
+        "sugerencia_prueba": "Documentar y probar casos límite de clasificar",
+        "origen": "reglas"
+      },
+      {
+        "archivo": "soporte_ia.py",
+        "linea": 162,
+        "regla": "R01",
+        "severidad": "baja",
+        "descripcion": "Función 'atender' de 15 líneas sin docstring",
+        "sugerencia_prueba": "Documentar y probar casos límite de atender",
+        "origen": "reglas"
+      },
+      {
+        "archivo": "soporte_ia.py",
+        "linea": 190,
+        "regla": "R01",
+        "severidad": "baja",
+        "descripcion": "Función '_catalogo' de 9 líneas sin docstring",
+        "sugerencia_prueba": "Documentar y probar casos límite de _catalogo",
+        "origen": "reglas"
+      },
+      {
+        "archivo": "soporte_ia.py",
+        "linea": 200,
+        "regla": "R01",
+        "severidad": "baja",
+        "descripcion": "Función '_cotizar' de 15 líneas sin docstring",
+        "sugerencia_prueba": "Documentar y probar casos límite de _cotizar",
+        "origen": "reglas"
+      },
+      {
+        "archivo": "soporte_ia.py",
+        "linea": 230,
+        "regla": "R01",
+        "severidad": "baja",
+        "descripcion": "Función 'resolver_ticket' de 11 líneas sin docstring",
+        "sugerencia_prueba": "Documentar y probar casos límite de resolver_ticket",
+        "origen": "reglas"
+      },
+      {
+        "archivo": "ventas.py",
+        "linea": 26,
+        "regla": "R01",
+        "severidad": "baja",
+        "descripcion": "Función 'registrar_pedido' de 19 líneas sin docstring",
+        "sugerencia_prueba": "Documentar y probar casos límite de registrar_pedido",
+        "origen": "reglas"
+      }
+    ]
+  },
+  "estimaciones": {
+    "juicio_expertos": {
+      "expertos": [
+        "Docente asesor",
+        "Companero con experiencia DevOps",
+        "Autor del proyecto"
+      ],
+      "por_modulo": {
+        "catalogo": {
+          "valores": [
+            4,
+            5,
+            4
+          ],
+          "promedio": 4.33,
+          "minimo": 4,
+          "maximo": 5
+        },
+        "cotizador": {
+          "valores": [
+            8,
+            10,
+            9
+          ],
+          "promedio": 9.0,
+          "minimo": 8,
+          "maximo": 10
+        },
+        "repositorio": {
+          "valores": [
+            3,
+            4,
+            4
+          ],
+          "promedio": 3.67,
+          "minimo": 3,
+          "maximo": 4
+        },
+        "ventas": {
+          "valores": [
+            9,
+            10,
+            8
+          ],
+          "promedio": 9.0,
+          "minimo": 8,
+          "maximo": 10
+        },
+        "soporte_ia": {
+          "valores": [
+            16,
+            20,
+            15
+          ],
+          "promedio": 17.0,
+          "minimo": 15,
+          "maximo": 20
+        },
+        "devops_ci_reporte": {
+          "valores": [
+            10,
+            12,
+            12
+          ],
+          "promedio": 11.33,
+          "minimo": 10,
+          "maximo": 12
+        }
+      },
+      "total": 54.33
+    },
+    "analoga": {
+      "proyecto_anterior": "Sistema de cotizacion web para taller de impresion (proyecto del semestre pasado)",
+      "horas_anterior": 62,
+      "sloc_anterior": 300,
+      "sloc_actual": 358,
+      "horas_por_sloc": 0.2067,
+      "factor_ajuste": 1.15,
+      "justificacion": "Se suma 15% por la integracion con IA y el pipeline DevOps, que el proyecto anterior no tenia.",
+      "horas": 85.08
+    },
+    "tres_puntos": {
+      "por_modulo": {
+        "catalogo": {
+          "O": 3.0,
+          "M": 4.0,
+          "P": 7.0,
+          "esperado": 4.33,
+          "sigma": 0.67
+        },
+        "cotizador": {
+          "O": 6.0,
+          "M": 8.0,
+          "P": 12.0,
+          "esperado": 8.33,
+          "sigma": 1.0
+        },
+        "repositorio": {
+          "O": 3.0,
+          "M": 4.0,
+          "P": 6.0,
+          "esperado": 4.17,
+          "sigma": 0.5
+        },
+        "ventas": {
+          "O": 6.0,
+          "M": 8.0,
+          "P": 13.0,
+          "esperado": 8.5,
+          "sigma": 1.17
+        },
+        "soporte_ia": {
+          "O": 10.0,
+          "M": 14.0,
+          "P": 24.0,
+          "esperado": 15.0,
+          "sigma": 2.33
+        },
+        "devops_ci_reporte": {
+          "O": 8.0,
+          "M": 10.0,
+          "P": 16.0,
+          "esperado": 10.67,
+          "sigma": 1.33
+        }
+      },
+      "total": 51.0,
+      "sigma_total": 3.21,
+      "rango_95": [
+        44.58,
+        57.42
+      ]
+    },
+    "puntos_funcion": {
+      "detalle": [
+        {
+          "nombre": "Registrar cotizacion",
+          "tipo": "EI",
+          "complejidad": "media",
+          "peso": 4
+        },
+        {
+          "nombre": "Registrar pedido",
+          "tipo": "EI",
+          "complejidad": "media",
+          "peso": 4
+        },
+        {
+          "nombre": "Cambiar estado de pedido",
+          "tipo": "EI",
+          "complejidad": "baja",
+          "peso": 3
+        },
+        {
+          "nombre": "Crear ticket de soporte",
+          "tipo": "EI",
+          "complejidad": "media",
+          "peso": 4
+        },
+        {
+          "nombre": "Resolver ticket",
+          "tipo": "EI",
+          "complejidad": "baja",
+          "peso": 3
+        },
+        {
+          "nombre": "Mensaje al asistente IA",
+          "tipo": "EI",
+          "complejidad": "alta",
+          "peso": 6
+        },
+        {
+          "nombre": "Cotizacion detallada",
+          "tipo": "EO",
+          "complejidad": "media",
+          "peso": 5
+        },
+        {
+          "nombre": "Listado de pedidos",
+          "tipo": "EO",
+          "complejidad": "media",
+          "peso": 5
+        },
+        {
+          "nombre": "Respuesta del asistente IA",
+          "tipo": "EO",
+          "complejidad": "alta",
+          "peso": 7
+        },
+        {
+          "nombre": "Consultar catalogo",
+          "tipo": "EQ",
+          "complejidad": "baja",
+          "peso": 3
+        },
+        {
+          "nombre": "Consultar pedidos por estado",
+          "tipo": "EQ",
+          "complejidad": "baja",
+          "peso": 3
+        },
+        {
+          "nombre": "Consultar tickets abiertos",
+          "tipo": "EQ",
+          "complejidad": "baja",
+          "peso": 3
+        },
+        {
+          "nombre": "Archivo de pedidos",
+          "tipo": "ILF",
+          "complejidad": "baja",
+          "peso": 7
+        },
+        {
+          "nombre": "Archivo de tickets",
+          "tipo": "ILF",
+          "complejidad": "baja",
+          "peso": 7
+        },
+        {
+          "nombre": "Catalogo de letreros",
+          "tipo": "ILF",
+          "complejidad": "baja",
+          "peso": 7
+        },
+        {
+          "nombre": "Servicio externo de IA (Claude)",
+          "tipo": "EIF",
+          "complejidad": "baja",
+          "peso": 5
+        }
+      ],
+      "resumen": {
+        "EI": {
+          "cantidad": 6,
+          "puntos": 24
+        },
+        "EO": {
+          "cantidad": 3,
+          "puntos": 17
+        },
+        "EQ": {
+          "cantidad": 3,
+          "puntos": 9
+        },
+        "ILF": {
+          "cantidad": 3,
+          "puntos": 21
+        },
+        "EIF": {
+          "cantidad": 1,
+          "puntos": 5
+        }
+      },
+      "ufp": 76,
+      "suma_gsc": 29,
+      "vaf": 0.94,
+      "pf": 71.44,
+      "horas_por_pf": 0.8,
+      "horas": 57.15
+    },
+    "comparativo": [
+      {
+        "tecnica": "Juicio de expertos",
+        "horas": 54.33,
+        "real": 60.0,
+        "desviacion_pct": -9.5
+      },
+      {
+        "tecnica": "Estimación análoga",
+        "horas": 85.08,
+        "real": 60.0,
+        "desviacion_pct": 41.8
+      },
+      {
+        "tecnica": "Tres puntos (PERT)",
+        "horas": 51.0,
+        "real": 60.0,
+        "desviacion_pct": -15.0
+      },
+      {
+        "tecnica": "Puntos de función",
+        "horas": 57.15,
+        "real": 60.0,
+        "desviacion_pct": -4.8
+      }
+    ]
+  },
+  "calidad": {
+    "criterios": [
+      {
+        "criterio": "Pruebas aprobadas",
+        "meta": "100 %",
+        "resultado": "100.0%",
+        "cumple": true,
+        "caracteristica": "Idoneidad funcional"
+      },
+      {
+        "criterio": "Cumplimiento de requisitos",
+        "meta": "100 %",
+        "resultado": "100.0%",
+        "cumple": true,
+        "caracteristica": "Idoneidad funcional"
+      },
+      {
+        "criterio": "Cobertura de código",
+        "meta": ">= 80 %",
+        "resultado": "94.2%",
+        "cumple": true,
+        "caracteristica": "Idoneidad funcional"
+      },
+      {
+        "criterio": "Complejidad ciclomática máxima",
+        "meta": "<= 10",
+        "resultado": "9",
+        "cumple": true,
+        "caracteristica": "Mantenibilidad"
+      },
+      {
+        "criterio": "Eficacia de las pruebas (críticos)",
+        "meta": ">= 70 %",
+        "resultado": "75.0%",
+        "cumple": true,
+        "caracteristica": "Fiabilidad"
+      },
+      {
+        "criterio": "MTTR",
+        "meta": "<= 24 h",
+        "resultado": "2.54 h",
+        "cumple": true,
+        "caracteristica": "Fiabilidad"
+      },
+      {
+        "criterio": "Densidad de defectos",
+        "meta": "<= 50 /KLOC",
+        "resultado": "27.9",
+        "cumple": true,
+        "caracteristica": "Fiabilidad"
+      },
+      {
+        "criterio": "Desviación de esfuerzo total",
+        "meta": "<= 30 %",
+        "resultado": "25.0%",
+        "cumple": true,
+        "caracteristica": "Gestión"
+      }
+    ],
+    "cumplen": 8,
+    "total": 8,
+    "grado_cumplimiento": 100.0
+  },
+  "interpretacion_ia": "Complejidad ciclomática promedio 2.82 y máxima 9: complejidad baja (código fácil de mantener y probar). Cobertura 94.2 % con 32 pruebas, todas aprobadas en 0.22 s. Densidad de 27.9 defectos/KLOC (valor citado por McConnell para software entregado: 15 a 50). MTTD 21.65 h y MTTR 2.54 h; el defecto que llegó a producción muestra que debe reforzarse la validación de severidad. Eficacia de pruebas 75.0 % y de revisión 40.0 %. Desviación de esfuerzo 25.0 %.",
+  "ia_llamadas": {
+    "ok": 0,
+    "fallidas": 0
+  }
+}

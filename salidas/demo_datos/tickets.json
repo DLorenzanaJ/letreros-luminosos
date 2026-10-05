@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "cliente": "Cliente demo",
+    "descripcion": "Mi letrero no enciende",
+    "severidad": "media",
+    "estado": "resuelto",
+    "creado": "2026-10-02T09:30:00",
+    "resuelto": "2026-10-02T10:15:00",
+    "minutos_resolucion": 45.0
+  },
+  {
+    "id": 2,
+    "cliente": "Cliente demo",
+    "descripcion": "Le entro agua al letrero y huele a quemado",
+    "severidad": "alta",
+    "estado": "resuelto",
+    "creado": "2026-10-02T09:45:00",
+    "resuelto": "2026-10-02T11:45:00",
+    "minutos_resolucion": 120.0
+  }
+]
