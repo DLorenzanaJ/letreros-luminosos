@@ -1,5 +1,5 @@
-============================= test session starts ==============================
-collecting ... collected 32 items
+============================= test session starts =============================
+collecting ... collected 33 items
 
 tests/test_catalogo.py::test_listar_tipos_devuelve_tres PASSED           [  3%]
 tests/test_catalogo.py::test_obtener_tipo_inexistente_falla PASSED       [  6%]
@@ -8,22 +8,23 @@ tests/test_cotizador.py::test_cotizar_neon_basico PASSED                 [ 12%]
 tests/test_cotizador.py::test_cotizar_con_rgb_e_instalacion PASSED       [ 15%]
 tests/test_cotizador.py::test_iva_16_por_ciento PASSED                   [ 18%]
 tests/test_cotizador.py::test_area_minima_facturable PASSED              [ 21%]
-tests/test_cotizador.py::test_medida_fuera_de_rango PASSED               [ 25%]
-tests/test_cotizador.py::test_medida_no_numerica PASSED                  [ 28%]
-tests/test_repositorio.py::test_agregar_y_cargar PASSED                  [ 31%]
-tests/test_repositorio.py::test_repositorio_recupera_archivo_corrupto PASSED [ 34%]
-tests/test_repositorio.py::test_actualizar_inexistente PASSED            [ 37%]
-tests/test_soporte_ia.py::test_soporte_cotiza_desde_texto PASSED         [ 40%]
-tests/test_soporte_ia.py::test_soporte_pide_medidas_si_faltan PASSED     [ 43%]
-tests/test_soporte_ia.py::test_soporte_falla_crea_ticket PASSED          [ 46%]
-tests/test_soporte_ia.py::test_soporte_riesgo_electrico_es_alta PASSED   [ 50%]
-tests/test_soporte_ia.py::test_soporte_responde_catalogo PASSED          [ 53%]
-tests/test_soporte_ia.py::test_soporte_mensaje_otro PASSED               [ 56%]
-tests/test_soporte_ia.py::test_resolver_ticket_calcula_tiempo PASSED     [ 59%]
-tests/test_soporte_ia.py::test_resolver_ticket_invalido PASSED           [ 62%]
-tests/test_soporte_ia.py::test_soporte_usa_proveedor_ia PASSED           [ 65%]
-tests/test_soporte_ia.py::test_soporte_tolera_fallo_proveedor PASSED     [ 68%]
-tests/test_soporte_ia.py::test_gemini_redacta_y_cuenta_llamadas PASSED   [ 71%]
+tests/test_cotizador.py::test_medida_fuera_de_rango PASSED               [ 24%]
+tests/test_cotizador.py::test_medida_no_numerica PASSED                  [ 27%]
+tests/test_pruebas_ia.py::test_pruebas_ia_todas_pasan_sin_red PASSED     [ 30%]
+tests/test_repositorio.py::test_agregar_y_cargar PASSED                  [ 33%]
+tests/test_repositorio.py::test_repositorio_recupera_archivo_corrupto PASSED [ 36%]
+tests/test_repositorio.py::test_actualizar_inexistente PASSED            [ 39%]
+tests/test_soporte_ia.py::test_soporte_cotiza_desde_texto PASSED         [ 42%]
+tests/test_soporte_ia.py::test_soporte_pide_medidas_si_faltan PASSED     [ 45%]
+tests/test_soporte_ia.py::test_soporte_falla_crea_ticket PASSED          [ 48%]
+tests/test_soporte_ia.py::test_soporte_riesgo_electrico_es_alta PASSED   [ 51%]
+tests/test_soporte_ia.py::test_soporte_responde_catalogo PASSED          [ 54%]
+tests/test_soporte_ia.py::test_soporte_mensaje_otro PASSED               [ 57%]
+tests/test_soporte_ia.py::test_resolver_ticket_calcula_tiempo PASSED     [ 60%]
+tests/test_soporte_ia.py::test_resolver_ticket_invalido PASSED           [ 63%]
+tests/test_soporte_ia.py::test_soporte_usa_proveedor_ia PASSED           [ 66%]
+tests/test_soporte_ia.py::test_soporte_tolera_fallo_proveedor PASSED     [ 69%]
+tests/test_soporte_ia.py::test_gemini_redacta_y_cuenta_llamadas PASSED   [ 72%]
 tests/test_soporte_ia.py::test_gemini_tolera_fallo_de_red PASSED         [ 75%]
 tests/test_soporte_ia.py::test_crear_proveedor_segun_variables PASSED    [ 78%]
 tests/test_ventas.py::test_descuento_5 PASSED                            [ 81%]
@@ -34,19 +35,19 @@ tests/test_ventas.py::test_transicion_valida PASSED                      [ 93%]
 tests/test_ventas.py::test_transicion_invalida PASSED                    [ 96%]
 tests/test_ventas.py::test_cancelado_no_suma_al_total PASSED             [100%]
 
---------- generated xml file: /home/claude/letreros/salidas/junit.xml ----------
-================================ tests coverage ================================
-_______________ coverage: platform linux, python 3.12.3-final-0 ________________
+- generated xml file: C:\Users\Juan Angel\Downloads\letreros_devops\letreros\salidas\junit.xml -
+=============================== tests coverage ================================
+_______________ coverage: platform win32, python 3.14.8-final-0 _______________
 
 Name                 Stmts   Miss  Cover   Missing
 --------------------------------------------------
-app/__init__.py          0      0   100%
-app/catalogo.py         16      0   100%
-app/cotizador.py        38      0   100%
-app/repositorio.py      36      0   100%
-app/soporte_ia.py      154     16    90%   89-90, 102-105, 133-136, 194-198, 210-211
-app/ventas.py           33      0   100%
+app\__init__.py          0      0   100%
+app\catalogo.py         16      0   100%
+app\cotizador.py        26      0   100%
+app\repositorio.py      36      0   100%
+app\soporte_ia.py      154     14    91%   89-90, 102-105, 133-136, 194-198
+app\ventas.py           33      0   100%
 --------------------------------------------------
-TOTAL                  277     16    94%
+TOTAL                  265     14    95%
 Coverage JSON written to file salidas/coverage.json
-============================== 32 passed in 0.22s ==============================
+============================= 33 passed in 0.81s ==============================

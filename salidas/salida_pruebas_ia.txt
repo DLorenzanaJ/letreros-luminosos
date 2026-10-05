@@ -1,0 +1,28 @@
+=== A. ASISTENTE (proveedor local, repetible) ===
+[OK] 1. Quiero un letrero neon de 1.2 x 0.6 m para mi cafeteria
+      esperado: cotizar, total $2,338.56 | obtenido: cotizar, total $2,338.56
+[OK] 2. Que diferencia hay entre neon y caja de luz?
+      esperado: catalogo, compara productos | obtenido: catalogo, compara productos
+[OK] 3. Mi letrero no enciende
+      esperado: falla, ticket media | obtenido: falla, ticket media
+[OK] 4. Le entro agua al letrero y huele a quemado
+      esperado: falla, ticket alta, indica desconectar | obtenido: falla, ticket alta, indica desconectar
+[OK] 5. hola
+      esperado: otro | obtenido: otro
+[OK] 6. cuanto cuesta un letrero
+      esperado: cotizar, pide medidas | obtenido: cotizar, pide medidas
+[OK] 7. Quiero un letrero neon de 9 x 1
+      esperado: cotizar, rechaza medida | obtenido: cotizar, rechaza medida
+
+=== B. SIMULACION DE FALLAS DE LA IA ===
+[OK] Sin conexión (ConnectionError): 7/7 respuestas correctas, fallos contados 7
+[OK] Clave rechazada (HTTP 403): 7/7 respuestas correctas, fallos contados 7
+[OK] Tiempo de espera agotado: 7/7 respuestas correctas, fallos contados 7
+[OK] Respuesta vacía de la IA: 7/7 respuestas correctas, fallos contados 0
+[OK] IA disponible (simulada): 7/7 respuestas correctas, fallos contados 0
+
+=== C. LLAMADA REAL CON CLAVE FALSA ===
+Resultado de la llamada: el servicio rechazó la solicitud (HTTP 400)
+El asistente respondio con reglas: si
+
+Pruebas de IA aprobadas: 12 de 12

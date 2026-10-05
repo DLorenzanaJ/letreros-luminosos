@@ -1,7 +1,7 @@
 {
-  "generado": "2026-10-04T08:51:59",
-  "sistema": "Linux-6.18.44-fc-v64-x86_64-with-glibc2.39",
-  "python": "3.12.3",
+  "generado": "2026-10-04T19:31:10",
+  "sistema": "Windows-11-10.0.26200-SP0",
+  "python": "3.14.8",
   "modo_ia": "local (reglas)",
   "producto": {
     "modulos": {
@@ -104,14 +104,14 @@
     "mi_promedio": 53.0
   },
   "pruebas": {
-    "total": 32,
-    "aprobadas": 32,
+    "total": 33,
+    "aprobadas": 33,
     "fallidas": 0,
-    "tiempo_s": 0.22,
+    "tiempo_s": 0.58,
     "tasa_exito": 100.0
   },
   "cobertura": {
-    "total": 94.2,
+    "total": 94.7,
     "por_archivo": {
       "__init__": {
         "cobertura": 100.0,
@@ -125,7 +125,7 @@
       },
       "cotizador": {
         "cobertura": 100.0,
-        "sentencias": 38,
+        "sentencias": 26,
         "no_cubiertas": 0
       },
       "repositorio": {
@@ -134,9 +134,9 @@
         "no_cubiertas": 0
       },
       "soporte_ia": {
-        "cobertura": 89.6,
+        "cobertura": 90.9,
         "sentencias": 154,
-        "no_cubiertas": 16
+        "no_cubiertas": 14
       },
       "ventas": {
         "cobertura": 100.0,
@@ -883,7 +883,7 @@
       {
         "criterio": "Cobertura de código",
         "meta": ">= 80 %",
-        "resultado": "94.2%",
+        "resultado": "94.7%",
         "cumple": true,
         "caracteristica": "Idoneidad funcional"
       },
@@ -927,7 +927,114 @@
     "total": 8,
     "grado_cumplimiento": 100.0
   },
-  "interpretacion_ia": "Complejidad ciclomática promedio 2.82 y máxima 9: complejidad baja (código fácil de mantener y probar). Cobertura 94.2 % con 32 pruebas, todas aprobadas en 0.22 s. Densidad de 27.9 defectos/KLOC (valor citado por McConnell para software entregado: 15 a 50). MTTD 21.65 h y MTTR 2.54 h; el defecto que llegó a producción muestra que debe reforzarse la validación de severidad. Eficacia de pruebas 75.0 % y de revisión 40.0 %. Desviación de esfuerzo 25.0 %.",
+  "interpretacion_ia": "Complejidad ciclomática promedio 2.82 y máxima 9: complejidad baja (código fácil de mantener y probar). Cobertura 94.7 % con 33 pruebas, todas aprobadas en 0.58 s. Densidad de 27.9 defectos/KLOC (valor citado por McConnell para software entregado: 15 a 50). MTTD 21.65 h y MTTR 2.54 h; el defecto que llegó a producción muestra que debe reforzarse la validación de severidad. Eficacia de pruebas 75.0 % y de revisión 40.0 %. Desviación de esfuerzo 25.0 %.",
+  "pruebas_ia": {
+    "asistente": [
+      {
+        "n": 1,
+        "mensaje": "Quiero un letrero neon de 1.2 x 0.6 m para mi cafeteria",
+        "esperado": "cotizar, total $2,338.56",
+        "obtenido": "cotizar, total $2,338.56",
+        "ok": true
+      },
+      {
+        "n": 2,
+        "mensaje": "Que diferencia hay entre neon y caja de luz?",
+        "esperado": "catalogo, compara productos",
+        "obtenido": "catalogo, compara productos",
+        "ok": true
+      },
+      {
+        "n": 3,
+        "mensaje": "Mi letrero no enciende",
+        "esperado": "falla, ticket media",
+        "obtenido": "falla, ticket media",
+        "ok": true
+      },
+      {
+        "n": 4,
+        "mensaje": "Le entro agua al letrero y huele a quemado",
+        "esperado": "falla, ticket alta, indica desconectar",
+        "obtenido": "falla, ticket alta, indica desconectar",
+        "ok": true
+      },
+      {
+        "n": 5,
+        "mensaje": "hola",
+        "esperado": "otro",
+        "obtenido": "otro",
+        "ok": true
+      },
+      {
+        "n": 6,
+        "mensaje": "cuanto cuesta un letrero",
+        "esperado": "cotizar, pide medidas",
+        "obtenido": "cotizar, pide medidas",
+        "ok": true
+      },
+      {
+        "n": 7,
+        "mensaje": "Quiero un letrero neon de 9 x 1",
+        "esperado": "cotizar, rechaza medida",
+        "obtenido": "cotizar, rechaza medida",
+        "ok": true
+      }
+    ],
+    "fallos": [
+      {
+        "escenario": "Sin conexión (ConnectionError)",
+        "mensajes": 7,
+        "esperado": "reglas",
+        "coinciden": 7,
+        "fallos": 7,
+        "fallos_esperados": 7,
+        "ok": true
+      },
+      {
+        "escenario": "Clave rechazada (HTTP 403)",
+        "mensajes": 7,
+        "esperado": "reglas",
+        "coinciden": 7,
+        "fallos": 7,
+        "fallos_esperados": 7,
+        "ok": true
+      },
+      {
+        "escenario": "Tiempo de espera agotado",
+        "mensajes": 7,
+        "esperado": "reglas",
+        "coinciden": 7,
+        "fallos": 7,
+        "fallos_esperados": 7,
+        "ok": true
+      },
+      {
+        "escenario": "Respuesta vacía de la IA",
+        "mensajes": 7,
+        "esperado": "reglas",
+        "coinciden": 7,
+        "fallos": 0,
+        "fallos_esperados": 0,
+        "ok": true
+      },
+      {
+        "escenario": "IA disponible (simulada)",
+        "mensajes": 7,
+        "esperado": "ia",
+        "coinciden": 7,
+        "fallos": 0,
+        "fallos_esperados": 0,
+        "ok": true
+      }
+    ],
+    "real": {
+      "ejecutada": true,
+      "resultado": "el servicio rechazó la solicitud (HTTP 400)",
+      "respondio_con_reglas": true
+    },
+    "total": 12,
+    "pasan": 12
+  },
   "ia_llamadas": {
     "ok": 0,
     "fallidas": 0

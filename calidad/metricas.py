@@ -205,6 +205,7 @@ def interpretar(m, proveedor):
 
 def calcular_todo(proveedor, ejecutar_pruebas=True):
     from calidad.revision_ia import ejecutar_revision
+    from calidad import pruebas_ia
     if ejecutar_pruebas:
         correr_pruebas()
     producto = medir_producto()
@@ -221,6 +222,8 @@ def calcular_todo(proveedor, ejecutar_pruebas=True):
                                                    producto["sloc"], proyecto["horas_reales"])}
     m["calidad"] = informe_calidad(m)
     m["interpretacion_ia"] = interpretar(m, proveedor)
+    m["pruebas_ia"] = pruebas_ia.ejecutar(con_red=os.getenv("PRUEBAS_IA_SIN_RED") != "1")
+    pruebas_ia.escribir_log(m["pruebas_ia"])
     m["ia_llamadas"] = {"ok": proveedor.llamadas_ok, "fallidas": proveedor.llamadas_fallidas}
     with open(f"{SALIDAS}/metrics.json", "w", encoding="utf-8") as archivo:
         json.dump(m, archivo, ensure_ascii=False, indent=2)

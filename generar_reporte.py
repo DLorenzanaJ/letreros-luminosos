@@ -266,16 +266,23 @@ class Reporte:
             r._r.append(el)
 
     def portada(self, cfg, m):
+        def lleno(clave):
+            valor = str(cfg.get(clave, "")).strip()
+            return valor if valor and "[" not in valor else ""
+
         for _ in range(2):
             self.p("", espacio=18)
-        self.p(cfg["institucion"].upper(), True, centrado=True, tam=16)
-        self.p(cfg["materia"], False, centrado=True, tam=13, espacio=40)
+        if lleno("institucion"):
+            self.p(lleno("institucion").upper(), True, centrado=True, tam=16)
+        if lleno("materia"):
+            self.p(lleno("materia"), False, centrado=True, tam=13, espacio=40)
         self.p("Sistema de Ventas de Letreros Luminosos con Soporte de Inteligencia Artificial", True,
                centrado=True, tam=24, espacio=14)
         self.p("Reporte de calidad de software en un flujo DevOps", False, True, True, 14, 50)
         for etiqueta, clave in (("Alumno", "alumno"), ("Matrícula", "matricula"), ("Grupo", "grupo"),
                                 ("Profesor", "profesor"), ("Repositorio", "repositorio"), ("Fecha", "fecha")):
-            self.p(f"{etiqueta}: {cfg[clave]}", centrado=True, tam=12, espacio=4)
+            if lleno(clave):
+                self.p(f"{etiqueta}: {lleno(clave)}", centrado=True, tam=12, espacio=4)
         self.p("", espacio=30)
         self.p(f"Métricas generadas el {m['generado'].replace('T', ' ')} en {m['sistema']} "
                f"(Python {m['python']}). Asistente IA en modo: {m['modo_ia']}.", cursiva=True, centrado=True, tam=9)
@@ -498,6 +505,42 @@ def generar(m):
              "Muestra el comando python run_all.py ejecutándose en PowerShell y su resumen final de métricas; "
              "confirma que el programa corre en el entorno Windows del alumno.")
 
+    pia = m.get("pruebas_ia")
+    if pia:
+        r.h("7.1 Pruebas funcionales del asistente de IA", 2)
+        r.p("Se enviaron al asistente siete mensajes de prueba y se comparó el resultado obtenido con el esperado. Estas pruebas "
+            "usan el proveedor local de reglas para que sean repetibles en cualquier equipo; son las que verifican la lógica "
+            "que decide qué quiere el cliente, calcula precios y crea tickets.")
+        r.tabla("Casos de prueba del asistente", ["#", "Mensaje del cliente", "Resultado esperado", "Resultado obtenido", "Estado"],
+                [[x["n"], x["mensaje"], x["esperado"], x["obtenido"], "Aprobada" if x["ok"] else "Falla"] for x in pia["asistente"]],
+                [0.8, 5.2, 4.1, 4.1, 2.3], ["c", "l", "l", "l", "c"])
+        r.h("7.2 Pruebas de tolerancia a fallos de la IA", 2)
+        r.p("Para comprobar el requisito de fiabilidad RNF-01 se simularon fallas del proveedor de IA (sin conexión, clave rechazada, "
+            "tiempo de espera agotado y respuesta vacía) y un caso de IA disponible. En cada escenario se enviaron los mismos siete "
+            "mensajes: si la IA falla, el asistente debe responder igual que en modo local y el fallo debe quedar contado.")
+        r.tabla("Simulación de fallas del proveedor de IA", ["Escenario", "Respuestas correctas", "Fallos contados", "Estado"],
+                [[x["escenario"], f"{x['coinciden']} de {x['mensajes']}", f"{x['fallos']} (esperado {x['fallos_esperados']})",
+                  "Aprobada" if x["ok"] else "Falla"] for x in pia["fallos"]], [6.2, 3.6, 4.2, 2.5], ["l", "c", "c", "c"])
+        r.figura(figura_terminal("salida_pruebas_ia.txt", "term_pruebas_ia", "python -m calidad.pruebas_ia"),
+                 "Salida de las pruebas de funcionamiento y de fallas de la IA",
+                 f"La salida resume tres bloques: los siete casos del asistente, los cinco escenarios de falla simulada y la llamada "
+                 f"real con clave falsa. Resultado final: {pia['pasan']} de {pia['total']} pruebas de IA aprobadas, lo que confirma que "
+                 "el asistente sigue respondiendo cuando la IA no está disponible.", ancho=14.5)
+        real = pia["real"]
+        if real["ejecutada"]:
+            r.p(f"Llamada real con clave falsa: {real['resultado']}. El asistente "
+                f"{'respondió con el texto de reglas' if real['respondio_con_reglas'] else 'no pudo responder con reglas'}. "
+                "Este resultado depende de la conexión del equipo donde se ejecutó.")
+        for nombre_captura in ("falla_ia_windows",):
+            for ext in ("png", "jpg", "jpeg"):
+                ruta_c = f"capturas/{nombre_captura}.{ext}"
+                if os.path.exists(ruta_c):
+                    r.figura(ruta_c, "Captura real de la prueba de falla de la IA en Windows",
+                             "Muestra la ejecución del programa con una clave falsa: el encabezado indica el proveedor de IA, "
+                             "las respuestas del asistente siguen apareciendo con texto de reglas y se informa cuántas respuestas "
+                             "usaron el modo local.")
+                    break
+
     # 8 ------------------------------------------------------------------
     r.h("8. Métricas de producto")
     r.p("Miden las características del código y del software ya construido.")
@@ -670,8 +713,15 @@ def generar(m):
         f"({ca['grado_cumplimiento']} %), con {co['total']} % de cobertura y complejidad máxima de {pr['cc_maxima']}.")
     r.p(f"El flujo DevOps permite repetir la validación sin esfuerzo manual: un comando ejecuta el programa, las pruebas, las "
         f"métricas y el reporte. Esto garantiza que lo documentado coincide con lo ejecutado y reduce el riesgo de errores humanos.")
-    r.p(f"La IA aportó en tres puntos: atiende al cliente y diagnostica fallas en el soporte, revisa el código y interpreta las métricas. "
-        f"Por diseño, los precios y diagnósticos los calcula código verificable y la IA solo redacta, y el sistema sigue funcionando si la IA no está disponible.")
+    ll = m.get("ia_llamadas", {"ok": 0, "fallidas": 0})
+    if ll["ok"] > 0:
+        r.p("La IA aportó en tres puntos: atiende al cliente y diagnostica fallas en el soporte, revisa el código y interpreta las métricas. "
+            "Por diseño, los precios y diagnósticos los calcula código verificable y la IA solo redacta, y el sistema sigue funcionando si la IA no está disponible.")
+    else:
+        r.p(f"La capa de IA está implementada con proveedores intercambiables (Claude y Gemini) para el soporte, la revisión de código y la "
+            f"interpretación de métricas. En la ejecución documentada no hubo llamadas exitosas a un modelo de lenguaje (modo: {m['modo_ia']}; "
+            f"{ll['fallidas']} llamadas fallidas), por lo que esas funciones se resolvieron con reglas programadas. Al configurar una API key, "
+            "esas mismas funciones usan IA sin cambiar el resto del sistema, y los precios y diagnósticos siguen calculándose con código verificable.")
     r.p(f"En el proceso, el MTTD de {d['mttd_horas']} h frente al MTTR de {d['mttr_horas']} h muestra que el reto principal es detectar antes, no reparar; "
         f"por eso se refuerza la revisión temprana ({d['eficacia_revision']} % de eficacia). La desviación de esfuerzo fue de {py['desviacion_pct']} %, "
         "y las cuatro técnicas de estimación ofrecieron un rango útil para planear mejor el siguiente sprint.")
